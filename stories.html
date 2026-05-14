@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Stories | Lavior Wellness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { cream: '#f9f8f6', charcoal: '#151515', gold: '#c5a028' }, fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['Inter', 'sans-serif'] } } } }
+    </script>
+    <style>
+        html.lenis { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+        .lenis.lenis-stopped { overflow: hidden; }
+        body { background-color: #f9f8f6; overflow-x: hidden; color: #151515; }
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Premium Header -->
+    <nav class="fixed top-0 left-0 w-full z-50 p-6 md:px-12 flex justify-between items-center text-charcoal bg-cream/90 backdrop-blur-md">
+        <a href="index.html" class="text-2xl font-serif tracking-wide uppercase cursor-pointer">Lavior</a>
+        <div class="hidden lg:flex space-x-12 text-xs tracking-[0.15em] uppercase font-medium">
+            <a href="index.html" class="relative group hover:text-gold transition-colors duration-300">Home</a>
+            <a href="stories.html" class="relative group text-gold transition-colors duration-300">Happy Stories</a>
+            <a href="about.html" class="relative group hover:text-gold transition-colors duration-300">About</a>
+            <a href="why-us.html" class="relative group hover:text-gold transition-colors duration-300">Why Us?</a>
+            <a href="contact.html" class="relative group hover:text-gold transition-colors duration-300">Contact</a>
+        </div>
+        <a href="contact.html" class="hidden lg:block border border-charcoal/30 px-6 py-3 text-xs tracking-widest uppercase hover:bg-charcoal hover:text-white transition-all duration-300 rounded-sm">Book Consultation</a>
+        <button id="menu-toggle" class="lg:hidden flex flex-col justify-center items-center gap-[7px] w-10 h-10 flex-shrink-0" aria-label="Toggle menu">
+            <span id="ham-l1" class="block w-6 h-[1px] bg-charcoal origin-center"></span>
+            <span id="ham-l2" class="block w-6 h-[1px] bg-charcoal origin-center"></span>
+        </button>
+    </nav>
+
+    <main id="smooth-wrapper" class="pt-32">
+        <!-- Header Section -->
+        <section class="py-24 px-6 md:px-16 max-w-5xl mx-auto text-center">
+            <span class="text-gold tracking-[0.3em] uppercase text-sm mb-6 block">Testimonials</span>
+            <h1 class="text-5xl md:text-7xl font-serif leading-tight mb-6">Stories of <span class="italic text-gold">Renewal.</span></h1>
+            <p class="text-charcoal/60 text-lg font-light tracking-wide max-w-2xl mx-auto">Read firsthand accounts from international patients who trusted Lavior with their most important journeys.</p>
+        </section>
+
+        <!-- Grid Section -->
+        <section class="px-6 md:px-16 pb-32 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-y-24">
+            
+            <!-- Story Card 1 -->
+            <div class="story-card opacity-0 translate-y-10 group cursor-pointer">
+                <div class="overflow-hidden h-[400px] mb-6">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Sarah">
+                </div>
+                <h3 class="text-3xl font-serif mb-3">"I felt safe the moment I landed."</h3>
+                <p class="text-charcoal/70 font-light mb-4">"Traveling from Toronto for orthopedic surgery was terrifying. Lavior removed every ounce of anxiety. The concierge at the airport was a lifesaver."</p>
+                <div class="text-xs tracking-[0.1em] uppercase text-gold font-medium">— Sarah M., Canada</div>
+            </div>
+
+            <!-- Story Card 2 -->
+            <div class="story-card opacity-0 translate-y-10 md:mt-24 group cursor-pointer">
+                <div class="overflow-hidden h-[400px] mb-6">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Raj">
+                </div>
+                <h3 class="text-3xl font-serif mb-3">"Five-star luxury, world-class medicine."</h3>
+                <p class="text-charcoal/70 font-light mb-4">"The nursing care at the hotel post-surgery was better than any hospital I have ever been to. They anticipated my needs before I even spoke."</p>
+                <div class="text-xs tracking-[0.1em] uppercase text-gold font-medium">— Raj P., United Kingdom</div>
+            </div>
+
+            <!-- Story Card 3 -->
+            <div class="story-card opacity-0 translate-y-10 group cursor-pointer">
+                <div class="overflow-hidden h-[400px] mb-6">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Elena">
+                </div>
+                <h3 class="text-3xl font-serif mb-3">"Seamless from start to finish."</h3>
+                <p class="text-charcoal/70 font-light mb-4">"From the visa assistance back home to the airport drop-off after my recovery, the attention to detail was absolutely uncompromising. I can't recommend them enough."</p>
+                <div class="text-xs tracking-[0.1em] uppercase text-gold font-medium">— Elena V., USA</div>
+            </div>
+
+            <!-- Story Card 4 -->
+            <div class="story-card opacity-0 translate-y-10 md:mt-24 group cursor-pointer">
+                <div class="overflow-hidden h-[400px] mb-6">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="David">
+                </div>
+                <h3 class="text-3xl font-serif mb-3">"They gave me my mobility back."</h3>
+                <p class="text-charcoal/70 font-light mb-4">"The physiotherapy team that visited my luxury suite every morning was incredible. Recovering with a view of the city made the pain so much more manageable."</p>
+                <div class="text-xs tracking-[0.1em] uppercase text-gold font-medium">— David L., Australia</div>
+            </div>
+
+            <!-- Story Card 5 -->
+            <div class="story-card opacity-0 translate-y-10 group cursor-pointer">
+                <div class="overflow-hidden h-[400px] mb-6">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Maria">
+                </div>
+                <h3 class="text-3xl font-serif mb-3">"A personalized healing sanctuary."</h3>
+                <p class="text-charcoal/70 font-light mb-4">"The custom nutritional meals prepared for me after my procedure were exactly what my body needed. It didn't feel like recovery; it felt like a retreat."</p>
+                <div class="text-xs tracking-[0.1em] uppercase text-gold font-medium">— Maria C., Spain</div>
+            </div>
+
+            <!-- Story Card 6 -->
+            <div class="story-card opacity-0 translate-y-10 md:mt-24 group cursor-pointer">
+                <div class="overflow-hidden h-[400px] mb-6">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="James">
+                </div>
+                <h3 class="text-3xl font-serif mb-3">"I was never left in the dark."</h3>
+                <p class="text-charcoal/70 font-light mb-4">"My Lavior advocate sat with my family during the 6-hour surgery, keeping them updated. That level of empathy and communication is priceless."</p>
+                <div class="text-xs tracking-[0.1em] uppercase text-gold font-medium">— James K., USA</div>
+            </div>
+
+        </section>
+        
+        <!-- Footer -->
+        <footer class="bg-charcoal text-white py-24 px-6 md:px-16 text-center flex flex-col items-center">
+            <h2 class="text-4xl font-serif mb-6">Write your own recovery story.</h2>
+            <a href="contact.html" class="bg-gold text-charcoal px-10 py-5 rounded-full uppercase tracking-[0.2em] text-xs font-medium hover:bg-white transition-colors duration-300 mt-6">Consult an Expert</a>
+        </footer>
+    </main>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[45] flex flex-col items-center justify-center overflow-hidden" style="opacity:0;pointer-events:none;background:#151515;">
+        <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 50% 55%,rgba(197,160,40,0.07) 0%,transparent 60%);"></div>
+        <div id="menu-topline" class="absolute top-0 left-0 h-[1px] bg-gold" style="width:0%;opacity:0.5;"></div>
+        <nav class="relative z-10 flex flex-col items-center gap-8 text-center w-full px-8">
+            <a href="index.html" class="mobile-nav-link font-serif text-4xl sm:text-5xl leading-none text-white/80 hover:text-gold transition-colors duration-300" style="opacity:0;transform:translateY(40px);">Home</a>
+            <a href="stories.html" class="mobile-nav-link font-serif text-4xl sm:text-5xl leading-none text-gold italic" style="opacity:0;transform:translateY(40px);">Happy Stories</a>
+            <a href="about.html" class="mobile-nav-link font-serif text-4xl sm:text-5xl leading-none text-white/80 hover:text-gold transition-colors duration-300" style="opacity:0;transform:translateY(40px);">About</a>
+            <a href="why-us.html" class="mobile-nav-link font-serif text-4xl sm:text-5xl leading-none text-white/80 hover:text-gold transition-colors duration-300" style="opacity:0;transform:translateY(40px);">Why Us?</a>
+            <a href="contact.html" class="mobile-nav-link font-serif text-4xl sm:text-5xl leading-none text-white/80 hover:text-gold transition-colors duration-300" style="opacity:0;transform:translateY(40px);">Contact</a>
+        </nav>
+        <div class="relative z-10 mt-14 mobile-cta-wrap" style="opacity:0;transform:translateY(20px);">
+            <a href="contact.html" class="border border-white/25 px-8 py-4 text-[10px] tracking-[0.3em] uppercase text-white/70 hover:bg-white hover:text-charcoal transition-all duration-300">Book Consultation</a>
+        </div>
+        <p class="absolute bottom-8 text-white/10 text-[9px] tracking-[0.5em] uppercase font-light">Lavior Wellness</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smooth: true });
+        gsap.registerPlugin(ScrollTrigger);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+
+        // Fade in cards smoothly on scroll
+        gsap.utils.toArray('.story-card').forEach(card => {
+            gsap.fromTo(card, 
+                { y: 50, opacity: 0 }, 
+                {
+                    scrollTrigger: { trigger: card, start: "top 85%" },
+                    y: 0, opacity: 1, duration: 1.2, ease: "power3.out"
+                }
+            );
+        });
+
+        // Mobile Menu
+        (function(){
+            var toggle  = document.getElementById('menu-toggle');
+            var menu    = document.getElementById('mobile-menu');
+            var links   = document.querySelectorAll('.mobile-nav-link');
+            var cta     = document.querySelector('.mobile-cta-wrap');
+            var topline = document.getElementById('menu-topline');
+            var l1      = document.getElementById('ham-l1');
+            var l2      = document.getElementById('ham-l2');
+            var isOpen  = false;
+            toggle.addEventListener('click', function(){
+                isOpen = !isOpen;
+                if (isOpen) {
+                    menu.style.pointerEvents = 'auto';
+                    l1.style.backgroundColor = '#ffffff';
+                    l2.style.backgroundColor = '#ffffff';
+                    gsap.to(menu,    { opacity:1, duration:0.5,  ease:'power2.out' });
+                    gsap.to(topline, { width:'100%', duration:0.9, ease:'power2.out', delay:0.05 });
+                    gsap.to(links,   { opacity:1, y:0, duration:0.75, stagger:0.09, ease:'power3.out', delay:0.18 });
+                    gsap.to(cta,     { opacity:1, y:0, duration:0.6,  ease:'power3.out', delay:0.65 });
+                    gsap.to(l1,      { rotate:45,  y: 5.5, duration:0.4, ease:'power2.inOut' });
+                    gsap.to(l2,      { rotate:-45, y:-5.5, duration:0.4, ease:'power2.inOut' });
+                    if (typeof lenis !== 'undefined') lenis.stop();
+                } else {
+                    menu.style.pointerEvents = 'none';
+                    l1.style.removeProperty('background-color');
+                    l2.style.removeProperty('background-color');
+                    gsap.to(links,   { opacity:0, y:12, duration:0.22, stagger:0.04, ease:'power2.in' });
+                    gsap.to(cta,     { opacity:0, y:8,  duration:0.2 });
+                    gsap.to(topline, { width:'0%', duration:0.35, ease:'power2.in', delay:0.1 });
+                    gsap.to(menu,    { opacity:0, duration:0.45, ease:'power2.in', delay:0.15 });
+                    gsap.to(l1,      { rotate:0, y:0, duration:0.4, ease:'power2.inOut' });
+                    gsap.to(l2,      { rotate:0, y:0, duration:0.4, ease:'power2.inOut' });
+                    if (typeof lenis !== 'undefined') lenis.start();
+                }
+            });
+        })();
+
+    </script>
+</body>
+</html>

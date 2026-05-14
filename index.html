@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavior Wellness | Your Care Journey</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { cream: '#f9f8f6', charcoal: '#151515', gold: '#c5a028' },
+                    fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html.lenis { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+        .lenis.lenis-stopped { overflow: hidden; }
+        
+        body { background-color: #151515; overflow-x: hidden; color: #f9f8f6; }
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Premium Header -->
+    <nav class="fixed top-0 left-0 w-full z-50 p-6 md:px-12 flex justify-between items-center mix-blend-difference text-white">
+        <!-- Logo -->
+        <div class="text-2xl font-serif tracking-wide uppercase cursor-pointer">
+            Lavior
+        </div>
+        
+        <!-- Center Navigation (Hidden on mobile, visible on large screens) -->
+        <div class="hidden lg:flex space-x-12 text-xs tracking-[0.15em] uppercase font-medium">
+            <a href="index.html" class="relative group hover:text-gold transition-colors duration-300">
+                Home
+                <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="stories.html" class="relative group hover:text-gold transition-colors duration-300">
+                Happy Stories
+                <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="about.html" class="relative group hover:text-gold transition-colors duration-300">
+                About
+                <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="why-us.html" class="relative group hover:text-gold transition-colors duration-300">
+                Why Us?
+                <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="contact.html" class="relative group hover:text-gold transition-colors duration-300">
+                Contact
+                <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full"></span>
+            </a>
+        </div>
+
+        <!-- Call to Action -->
+        <a href="contact.html" class="hidden lg:block border border-white/30 px-6 py-3 text-xs tracking-widest uppercase hover:bg-white hover:text-charcoal transition-all duration-300 rounded-sm">Book Consultation</a>
+        <button id="menu-toggle" class="lg:hidden flex flex-col justify-center items-center gap-[7px] w-10 h-10 flex-shrink-0" aria-label="Toggle menu">
+            <span id="ham-l1" class="block w-6 h-[1px] bg-white origin-center"></span>
+            <span id="ham-l2" class="block w-6 h-[1px] bg-white origin-center"></span>
+        </button>
+    </nav>
+
+    <main id="smooth-wrapper">
+
+        <!-- Hero Section -->
+        <section class="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-charcoal z-10">
+            <div class="relative z-20 text-center max-w-4xl mx-auto px-6 hero-text opacity-0 translate-y-10">
+                <span class="text-gold tracking-[0.3em] uppercase text-sm mb-6 block">How It Works</span>
+                <h1 class="text-5xl md:text-7xl font-serif leading-tight mb-6">Your health is complex.<br><span class="italic text-gold">Your journey shouldn't be.</span></h1>
+                <p class="text-white/60 text-lg font-light tracking-wide max-w-xl mx-auto">Scroll to see exactly how we guide you from your first search to a full, comfortable recovery at home.</p>
+            </div>
+        </section>
+
+        <!-- The Vertical Stacking Cards Container -->
+        <section id="cards-container" class="relative w-full pb-[10vh] z-20">
+            <!-- JS will inject the 15 sticky cards here -->
+        </section>
+
+        <!-- Footer -->
+        <footer class="relative z-50 bg-charcoal text-white py-32 px-6 md:px-16 text-center flex flex-col items-center">
+            <h2 class="text-4xl md:text-6xl font-serif mb-6">Ready to focus on healing?</h2>
+            <p class="text-white/60 font-light mb-12 max-w-md">Let us handle the rest. Speak directly with a Lavior care director today to discuss your specific needs.</p>
+            <a href="contact.html" class="bg-gold text-charcoal px-10 py-5 rounded-full uppercase tracking-[0.2em] text-xs font-medium hover:bg-white transition-colors duration-300">
+                Start Your Journey
+            </a>
+        </footer>
+
+    </main>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[45] flex flex-col items-center justify-center overflow-hidden" style="opacity:0;pointer-events:none;background:#151515;">
+        <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 50% 55%,rgba(197,160,40,0.07) 0%,transparent 60%);"></div>
+        <div id="menu-topline" class="absolute top-0 left-0 h-[1px] bg-gold" style="width:0%;opacity:0.5;"></div>
+        <nav class="relative z-10 flex flex-col items-center gap-8 text-center w-full px-8">
+            <a href="index.html" class="mobile-nav-link font-serif text-4xl sm:text-5xl leading-none text-gold italic" style="opacity:0;transform:translateY(40px);">Home</a>
+            <a href="stories.html" class="mobile-nav-link font-serif text-4xl sm:text-5xl leading-none text-white/80 hover:text-gold transition-colors duration-300" style="opacity:0;transform:translateY(40px);">Happy Stories</a>
+            <a href="about.html" class="mobile-nav-link font-serif text-4xl sm:text-5xl leading-none text-white/80 hover:text-gold transition-colors duration-300" style="opacity:0;transform:translateY(40px);">About</a>
+            <a href="why-us.html" class="mobile-nav-link font-serif text-4xl sm:text-5xl leading-none text-white/80 hover:text-gold transition-colors duration-300" style="opacity:0;transform:translateY(40px);">Why Us?</a>
+            <a href="contact.html" class="mobile-nav-link font-serif text-4xl sm:text-5xl leading-none text-white/80 hover:text-gold transition-colors duration-300" style="opacity:0;transform:translateY(40px);">Contact</a>
+        </nav>
+        <div class="relative z-10 mt-14 mobile-cta-wrap" style="opacity:0;transform:translateY(20px);">
+            <a href="contact.html" class="border border-white/25 px-8 py-4 text-[10px] tracking-[0.3em] uppercase text-white/70 hover:bg-white hover:text-charcoal transition-all duration-300">Book Consultation</a>
+        </div>
+        <p class="absolute bottom-8 text-white/10 text-[9px] tracking-[0.5em] uppercase font-light">Lavior Wellness</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        // 1. The Production-Ready Data Array
+        const journeyData = [
+            { 
+                title: "Exploring Care Abroad", 
+                desc: "Looking for high-quality medical treatment overseas can feel overwhelming. You want world-class doctors, but the logistics of travel and recovery add unnecessary stress to your situation.", 
+                img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1920&auto=format&fit=crop" 
+            },
+            { 
+                title: "Finding Lavior", 
+                desc: "You discover a team that handles everything. We bridge the gap between top-tier medical facilities and luxury hospitality, ensuring your only focus is on getting better.", 
+                img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1920&auto=format&fit=crop" 
+            },
+            { 
+                title: "Your Personalized Plan", 
+                desc: "After remote consultations with specialists, we provide a crystal-clear roadmap. From your surgery details to your daily recovery meals, everything is planned before you pack your bags.", 
+                img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1920&auto=format&fit=crop" 
+            },
+            { 
+                title: "Zero Travel Hassles", 
+                desc: "We take over the paperwork. Our concierge team secures your medical visas, optimizes flight bookings, and manages all necessary documentation so you can travel without a single headache.", 
+                img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1920&auto=format&fit=crop" 
+            },
+            { 
+                title: "A Peaceful Departure", 
+                desc: "Board your flight knowing that every detail at your destination is fully prepared. From the moment your plane takes off, you are officially in our care.", 
+                img: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=1920&auto=format&fit=crop" 
+            },
+            { 
+                title: "Warm Welcome at the Gate", 
+                desc: "As soon as you land, our dedicated representative greets you right at the arrival gate. We assist with your luggage and guide you swiftly through expedited airport clearance.", 
+                img: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1920&auto=format&fit=crop" 
+            },
+            { 
+                title: "Private Premium Transfer", 
+                desc: "Step out of the airport and into a waiting luxury vehicle. Your private chauffeur ensures a smooth, quiet, and highly comfortable ride straight to your accommodation.", 
+                img: "https://images.unsplash.com/photo-1605280263929-1c42c62ef169?q=80&w=1920&auto=format&fit=crop" 
+            },
+            { 
+                title: "Checking Into Comfort", 
+                desc: "Arrive at a five-star hotel suite, pre-selected by us for its calm environment and premium amenities. It is the perfect, quiet space to rest and prepare your mind and body.", 
+                img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1920&auto=format&fit=crop" 
+            },
+            { 
+                title: "Time to Relax and Adjust", 
+                desc: "Jet lag and travel fatigue are real. We give you ample time to settle in, enjoy tailored nutritious meals, and simply rest before any medical procedures begin.", 
+                img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1920&auto=format&fit=crop" 
+            },
+            { 
+                title: "Accompanied to the Hospital", 
+                desc: "On the day of your treatment, our private transport takes you directly to our internationally accredited partner hospital. You never have to navigate a foreign city alone.", 
+                img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1920&auto=format&fit=crop" 
+            },
+            { 
+                title: "VIP Hospital Admission", 
+                desc: "Skip the waiting rooms. You receive immediate, priority admission, granting you direct access to your medical team without the anxiety of unexpected delays.", 
+                img: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1920&auto=format&fit=crop" 
+            },
+            { 
+                title: "Your Personal Advocate", 
+                desc: "A dedicated Lavior care coordinator stays by your side throughout your hospital stay. They ensure clear communication with your doctors and guarantee your utmost comfort.", 
+                img: "https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=1920&auto=format&fit=crop" 
+            },
+            { 
+                title: "Healing in Luxury", 
+                desc: "Leave the clinical environment behind. Return to your hotel suite where you will receive 24/7 on-call nursing, bespoke physiotherapy, and IV nutrition therapies while you heal.", 
+                img: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=1920&auto=format&fit=crop" 
+            },
+            { 
+                title: "Heading Home Renewed", 
+                desc: "Once your doctors give the all-clear, our chauffeur returns you safely to the airport. You board your flight feeling recovered, refreshed, and completely supported.", 
+                img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1920&auto=format&fit=crop" 
+            },
+            { 
+                title: "Ongoing Care at Home", 
+                desc: "Our relationship does not end at the airport. We provide continuous telehealth follow-ups and remote aftercare support to ensure your long-term health and absolute peace of mind.", 
+                img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1920&auto=format&fit=crop" 
+            }
+        ];
+
+        // 2. Generate HTML Dynamically
+        const container = document.getElementById('cards-container');
+        
+        journeyData.forEach((step, index) => {
+            const stepNum = String(index + 1).padStart(2, '0');
+            
+            const cardHTML = `
+                <div class="journey-card sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+                    
+                    <div class="card-inner w-full h-full relative flex items-center justify-center transform origin-top">
+                        
+                        <img src="${step.img}" alt="${step.title}" class="absolute inset-0 w-full h-full object-cover z-0">
+                        
+                        <!-- Base Dark Overlay for text readability -->
+                        <div class="absolute inset-0 bg-black/50 z-10"></div> 
+
+                        <!-- The Fade Overlay that activates on scroll -->
+                        <div class="fade-overlay absolute inset-0 bg-black z-30 opacity-0 pointer-events-none"></div>
+
+                        <div class="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-16 flex flex-col md:flex-row items-center">
+                            
+                            <!-- Large Number Indicator -->
+                            <div class="w-full md:w-1/3 mb-10 md:mb-0">
+                                <h2 class="text-[12vh] md:text-[20vh] font-serif leading-none text-white/20 tracking-tighter">${stepNum}</h2>
+                            </div>
+
+                            <!-- Text Content -->
+                            <div class="w-full md:w-2/3 md:pl-20">
+                                <h3 class="text-3xl md:text-5xl font-serif text-white mb-6 leading-tight">${step.title}</h3>
+                                <p class="text-white/80 font-light text-lg md:text-xl leading-relaxed max-w-xl">${step.desc}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', cardHTML);
+        });
+
+        // 3. Initialize Lenis Smooth Scroll
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+            smooth: true,
+        });
+
+        gsap.registerPlugin(ScrollTrigger);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+
+        // 4. Hero Animation
+        gsap.to(".hero-text", { opacity: 1, y: 0, duration: 1.5, ease: "power3.out", delay: 0.2 });
+
+        // 5. The SMOOTH 3D Stacking GSAP Logic
+        const cards = document.querySelectorAll('.journey-card');
+        
+        cards.forEach((card, index) => {
+            const inner = card.querySelector('.card-inner');
+            const fadeOverlay = card.querySelector('.fade-overlay');
+            
+            if (index < cards.length - 1) {
+                const nextCard = cards[index + 1];
+                
+                let tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: nextCard,
+                        start: "top bottom", 
+                        end: "top top",      
+                        scrub: true,         
+                    }
+                });
+
+                tl.to(inner, {
+                    scale: 0.85,     
+                    ease: "none"
+                }, 0)
+                .to(fadeOverlay, {
+                    opacity: 0.8,    
+                    ease: "none"
+                }, 0);
+            }
+        });
+
+        // Mobile Menu
+        (function(){
+            var toggle  = document.getElementById('menu-toggle');
+            var menu    = document.getElementById('mobile-menu');
+            var links   = document.querySelectorAll('.mobile-nav-link');
+            var cta     = document.querySelector('.mobile-cta-wrap');
+            var topline = document.getElementById('menu-topline');
+            var l1      = document.getElementById('ham-l1');
+            var l2      = document.getElementById('ham-l2');
+            var isOpen  = false;
+            toggle.addEventListener('click', function(){
+                isOpen = !isOpen;
+                if (isOpen) {
+                    menu.style.pointerEvents = 'auto';
+                    l1.style.backgroundColor = '#ffffff';
+                    l2.style.backgroundColor = '#ffffff';
+                    gsap.to(menu,    { opacity:1, duration:0.5,  ease:'power2.out' });
+                    gsap.to(topline, { width:'100%', duration:0.9, ease:'power2.out', delay:0.05 });
+                    gsap.to(links,   { opacity:1, y:0, duration:0.75, stagger:0.09, ease:'power3.out', delay:0.18 });
+                    gsap.to(cta,     { opacity:1, y:0, duration:0.6,  ease:'power3.out', delay:0.65 });
+                    gsap.to(l1,      { rotate:45,  y: 5.5, duration:0.4, ease:'power2.inOut' });
+                    gsap.to(l2,      { rotate:-45, y:-5.5, duration:0.4, ease:'power2.inOut' });
+                    if (typeof lenis !== 'undefined') lenis.stop();
+                } else {
+                    menu.style.pointerEvents = 'none';
+                    l1.style.removeProperty('background-color');
+                    l2.style.removeProperty('background-color');
+                    gsap.to(links,   { opacity:0, y:12, duration:0.22, stagger:0.04, ease:'power2.in' });
+                    gsap.to(cta,     { opacity:0, y:8,  duration:0.2 });
+                    gsap.to(topline, { width:'0%', duration:0.35, ease:'power2.in', delay:0.1 });
+                    gsap.to(menu,    { opacity:0, duration:0.45, ease:'power2.in', delay:0.15 });
+                    gsap.to(l1,      { rotate:0, y:0, duration:0.4, ease:'power2.inOut' });
+                    gsap.to(l2,      { rotate:0, y:0, duration:0.4, ease:'power2.inOut' });
+                    if (typeof lenis !== 'undefined') lenis.start();
+                }
+            });
+        })();
+
+    </script>
+</body>
+</html>
