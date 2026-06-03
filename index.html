@@ -533,12 +533,6 @@
                     return;
                 }
 
-                    gsap.to(form, { opacity: 0, duration: 0.3, onComplete: function() {
-                        form.style.display = 'none';
-                        successDiv.style.display = 'block';
-                        gsap.fromTo(successDiv, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5 });
-                    }});
-
                 var payload = {
                     name: form.fullName.value.trim(),
                     email: form.email.value.trim(),
@@ -572,6 +566,12 @@
                     if (!response.ok) {
                         throw new Error('Request failed with status ' + response.status);
                     }
+
+                    gsap.to(form, { opacity: 0, duration: 0.3, onComplete: function() {
+                        form.style.display = 'none';
+                        successDiv.style.display = 'block';
+                        gsap.fromTo(successDiv, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5 });
+                    }});
                 } catch (error) {
                     formError.textContent = 'Unable to send right now. Please try again in a moment.';
                     formError.style.display = 'block';
