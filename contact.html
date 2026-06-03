@@ -157,39 +157,39 @@
                 <div class="flex gap-6">
                     <div class="w-1/2">
                         <label class="text-xs text-taupe uppercase tracking-widest block mb-1">Full Name</label>
-                        <input type="text" required placeholder="John">
+                        <input type="text" id="full-name" name="fullName" required placeholder="John">
                     </div>
                     <div class="w-1/2">
                         <label class="text-xs text-taupe uppercase tracking-widest block mb-1">Age</label>
-                        <input type="number" required placeholder="40">
+                        <input type="number" id="age" name="age" required placeholder="40">
                     </div>
                 </div>
 
                 <div class="flex gap-6">
                     <div class="w-1/2">
                         <label class="text-xs text-taupe uppercase tracking-widest block mb-1">Gender</label>
-                        <select class="text-sage/80 bg-transparent">
+                        <select id="gender" name="gender" class="text-sage/80 bg-transparent">
                             <option value="" disabled selected>Select Gender</option>
-                            <option value="orthopedic">Male</option>
-                            <option value="cardiac">Female</option>
-                            <option value="cosmetic">Prefer not to say</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
                         </select>
                     </div>
 
                     <div class="w-1/2">
                         <label class="text-xs text-taupe uppercase tracking-widest block mb-1">Nationality</label>
-                        <input type="text" required placeholder="USA">
+                        <input type="text" id="nationality" name="nationality" required placeholder="USA">
                     </div>
                 </div>
 
                 <div>
                     <label class="text-xs text-taupe uppercase tracking-widest block mb-1">Phone Number</label>
-                    <input type="tel" placeholder="Phone Number" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
                 </div>
 
                 <div>
                     <label class="text-xs text-taupe uppercase tracking-widest block mb-1">Email Address</label>
-                    <input type="email" placeholder="john@example.com">
+                    <input type="email" id="email" name="email" placeholder="john@example.com">
                 </div>
 
                 <div>
@@ -314,23 +314,27 @@
             form.addEventListener('submit', async function(event) {
                 event.preventDefault();
 
-                var firstName = document.getElementById('first-name').value.trim();
-                var lastName = document.getElementById('last-name').value.trim();
+                var fullName = document.getElementById('full-name').value.trim();
+                var age = document.getElementById('age').value.trim();
+                var gender = document.getElementById('gender').value;
+                var nationality = document.getElementById('nationality').value.trim();
                 var email = document.getElementById('email').value.trim();
                 var phone = document.getElementById('phone').value.trim();
-                var company = document.getElementById('company').value.trim();
-                var website = document.getElementById('website').value.trim();
-                var subject = document.getElementById('subject').value;
                 var message = document.getElementById('message').value.trim();
 
                 var payload = {
-                    name: (firstName + ' ' + lastName).trim(),
+                    name: fullName,
                     email: email,
-                    subject: subject,
-                    message: message,
+                    subject: 'Consultation Request',
+                    message: [
+                        'Age: ' + age,
+                        'Gender: ' + (gender || 'Not specified'),
+                        'Nationality: ' + nationality,
+                        'Details: ' + message
+                    ].join('\n'),
                     phone: phone,
-                    company: company,
-                    website: website
+                    company: '',
+                    website: ''
                 };
 
                 status.textContent = 'Sending your request...';
