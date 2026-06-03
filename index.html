@@ -557,7 +557,7 @@
                 var payload = {
                     name: form.fullName.value.trim(),
                     email: form.email.value.trim(),
-                    subject: 'Consultation Request',
+                    subject: 'Consultation Request from ' + form.fullName.value.trim() + ' (' + form.phone.value.trim() + ')',
                     message: [
                         'Age: ' + form.age.value.trim(),
                         'Gender: ' + (form.gender.value || 'Not specified'),
