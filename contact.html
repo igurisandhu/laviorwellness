@@ -210,7 +210,7 @@
                             for="attachment"
                             class="flex items-center justify-between border-b border-taupe/30 cursor-pointer text-sage/80"
                         >
-                            <span id="file-name">Choose File</span>
+                            <span id="file-name">Choose one file (PDF, JPG, PNG) up to 5 MB</span>
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -223,7 +223,7 @@
 
                 <div>
                     <label class="text-xs text-taupe uppercase tracking-widest block mb-1">How can we help?</label>
-                    <textarea id="message" name="message" rows="4" required placeholder="Please provide brief details about your required care..."></textarea>
+                    <textarea id="description-area" name="description" rows="4" required placeholder="Please provide brief details about your required care..."></textarea>
                 </div>
 
                 <p id="form-status" class="text-sm text-sage/80" aria-live="polite"></p>
@@ -308,8 +308,34 @@
             var form = document.getElementById('contact-form');
             var status = document.getElementById('form-status');
             var submitBtn = document.getElementById('submit-btn');
+            var fileInput = document.getElementById('attachment');
+            var fileName = document.getElementById('file-name');
+            var maxFileSizeBytes = 5 * 1024 * 1024;
 
             if (!form || !status || !submitBtn) return;
+
+            if (fileInput && fileName) {
+                fileInput.addEventListener('change', function() {
+                    if (this.files.length > 1) {
+                        this.value = '';
+                        fileName.textContent = 'Choose one file (PDF, JPG, PNG) up to 5 MB';
+                        status.textContent = 'Please attach only one file.';
+                        status.style.color = '#A24D4D';
+                        return;
+                    }
+
+                    if (this.files[0] && this.files[0].size > maxFileSizeBytes) {
+                        this.value = '';
+                        fileName.textContent = 'Choose one file (PDF, JPG, PNG) up to 5 MB';
+                        status.textContent = 'File size must be 5 MB or smaller.';
+                        status.style.color = '#A24D4D';
+                        return;
+                    }
+
+                    fileName.textContent = this.files[0] ? this.files[0].name : 'Choose one file (PDF, JPG, PNG) up to 5 MB';
+                    status.textContent = '';
+                });
+            }
 
             form.addEventListener('submit', async function(event) {
                 event.preventDefault();
@@ -320,7 +346,19 @@
                 var nationality = document.getElementById('nationality').value.trim();
                 var email = document.getElementById('email').value.trim();
                 var phone = document.getElementById('phone').value.trim();
-                var message = document.getElementById('message').value.trim();
+                var description = document.getElementById('description-area').value.trim();
+
+                if (fileInput && fileInput.files.length > 1) {
+                    status.textContent = 'Please attach only one file.';
+                    status.style.color = '#A24D4D';
+                    return;
+                }
+
+                if (fileInput && fileInput.files[0] && fileInput.files[0].size > maxFileSizeBytes) {
+                    status.textContent = 'File size must be 5 MB or smaller.';
+                    status.style.color = '#A24D4D';
+                    return;
+                }
 
                 var payload = {
                     name: fullName,
@@ -330,7 +368,7 @@
                         'Age: ' + age,
                         'Gender: ' + (gender || 'Not specified'),
                         'Nationality: ' + nationality,
-                        'Details: ' + message
+                        'Details: ' + description
                     ].join('\n'),
                     phone: phone,
                     company: '',
