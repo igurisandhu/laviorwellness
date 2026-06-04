@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- =============================================
+         Lavior Wellness — Premium Medical Travel
+         Concierge & Healthcare Coordination in India
+         Domain: https://laviorwellness.com
+         Generated: 2026-04-06
+    ============================================= -->
+
+    <!-- Homepage — Top Priority -->
+    <url>
+        <loc>https://laviorwellness.com/</loc>
+        <lastmod>2026-04-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.00</priority>
+    </url>
+
+    <!-- About — High‑Value E‑E‑A‑T Page -->
+    <url>
+        <loc>https://laviorwellness.com/about.html</loc>
+        <lastmod>2026-04-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <!-- Why Us? — Differentiator & Trust Builder -->
+    <url>
+        <loc>https://laviorwellness.com/why-us.html</loc>
+        <lastmod>2026-04-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <!-- Patient Testimonials — Social Proof / YMYL Trust -->
+    <url>
+        <loc>https://laviorwellness.com/patient-testimonials.html</loc>
+        <lastmod>2026-04-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- Contact — Conversion Page -->
+    <url>
+        <loc>https://laviorwellness.com/contact.html</loc>
+        <lastmod>2026-04-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.95</priority>
+    </url>
+
+</urlset>
